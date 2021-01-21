@@ -28,3 +28,23 @@ class MLAlgorithmStatusSerializer(serializers.ModelSerializer):
         read_only_fields = ("id", "active")
         fields = ("id", "active", "created_by", "created_at", "parent_mlalgorithm")
 
+class MLRequestSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = MLRequest
+        read_only_fields = (
+            "id",
+            "input_data",
+            "full_response",
+            "response",
+            "created_at",
+            "parent_mlalgorithm",
+        )
+        fields =  (
+            "id",
+            "input_data",
+            "full_response",
+            "response",
+            "feedback",
+            "created_at",
+            "parent_endpoint"
+        )
